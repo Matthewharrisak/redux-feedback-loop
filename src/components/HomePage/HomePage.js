@@ -8,6 +8,8 @@ class HomePage extends Component {
         this.props.history.push('/FeelingToday');
       }
 
+      
+
   render() {
     return (
       <div className="Feeling">
@@ -15,6 +17,7 @@ class HomePage extends Component {
     
         
         <h1> How did today go? </h1>
+
         <button onClick={this.nextPage}> Submit feedback </button>
         <br/>
       </div>
