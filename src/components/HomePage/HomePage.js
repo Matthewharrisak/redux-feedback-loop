@@ -5,7 +5,7 @@ class HomePage extends Component {
 
     nextPage = () => {
         console.log('are we clicking?');
-        this.props.history.push('/feelingToday');
+        this.props.history.push('/FeelingToday');
       }
 
   render() {

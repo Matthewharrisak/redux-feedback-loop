@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import './App.css';
 import {HashRouter as Router, Route} from 'react-router-dom';
 import FeelingToday from '../FeelingToday/FeelingToday';
 import HomePage from '../HomePage/HomePage';
 import Understanding from '../UnderStanding/UnderStanding';
-import UnderStanding from '../UnderStanding/UnderStanding'
-import Supported from '../Supported/Supported'
-import Comments from '../Comments/Comments'
-import ReviewFeedback from '../ReviewFeedback/ReviewFeedback'
+import Supported from '../Supported/Supported';
+import Comments from '../Comments/Comments';
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+
+// import ReviewFeedback from '../ReviewFeedback/ReviewFeedback'
 
 class App extends Component {
 
@@ -24,13 +24,20 @@ class App extends Component {
         </header>
   
         <br/>
-        <FeelingToday/> 
+        {/* <FeelingToday/> 
         <UnderStanding/>
         <Comments/>
-        <ReviewFeedback/>
+        <ReviewFeedback/> */}
       </div>
       <Route exact path="/" component={HomePage}/>
-      <Route exact path="/feelingToday" component={FeelingToday}/>
+      <Route exact path="/FeelingToday" component={FeelingToday}/>
+      <Route exact path="/UnderStanding" component={Understanding}/>
+      <Route exact path="/Supported" component={Supported}/>
+      <Route exact path="/Comments" component={Comments}/>
+      <Route exact path="/ReviewFeedback" component={ReviewFeedback}/>
+
+
+
       </Router>
     
     );
