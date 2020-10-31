@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import Understanding from '../UnderStanding/UnderStanding';
-// import FeelingToday from '../FeelingToday/FeelingToday'
-// import UnderStanding from '../UnderStanding/UnderStanding'
-// import Supported from '../Supported/Supported'
+import FeelingToday from '../FeelingToday/FeelingToday'
+import UnderStanding from '../UnderStanding/UnderStanding'
+import Supported from '../Supported/Supported'
+import Comments from '../Comments/Comments'
+import ReviewFeedback from '../ReviewFeedback/ReviewFeedback'
 
 class App extends Component {
   render() {
@@ -15,9 +17,10 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
-        {/* <FeelingToday/> */}
-        {/* <UnderStanding/> */}
-        {/* <Supported/> */}
+        <FeelingToday/> 
+        <UnderStanding/>
+        <Comments/>
+        <ReviewFeedback/>
       </div>
     );
   }
