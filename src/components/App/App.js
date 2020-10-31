@@ -4,7 +4,7 @@ import './App.css';
 import Understanding from '../UnderStanding/UnderStanding';
 // import FeelingToday from '../FeelingToday/FeelingToday'
 // import UnderStanding from '../UnderStanding/UnderStanding'
-import Supported from '../Supported/Supported'
+// import Supported from '../Supported/Supported'
 
 class App extends Component {
   render() {
