@@ -7,12 +7,21 @@ import Understanding from '../UnderStanding/UnderStanding';
 import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
+import axios from 'axios';
 
-// import ReviewFeedback from '../ReviewFeedback/ReviewFeedback'
 
 class App extends Component {
 
-  
+  componentDidMount = () => {
+    this.getFeedbackData();
+  }
+
+  getFeedbackData = () => {
+    axios.get('/feedback').then((response) => {
+      console.log('this is from our database!!!!' , response.data);
+      
+    });
+  }
 
   render() {
     return (
