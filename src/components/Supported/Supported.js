@@ -13,7 +13,7 @@ class Supported extends Component {
       <div className="Supported">
      
           <h1>How well are you being supported?</h1>
-        <input type="integer" value="feedback"></input>
+        <input type="integer" placeholder="Please Answer with 1-5"></input>
         <button onClick={this.nextPage} > Next Page </button>
         <br/>
       </div>

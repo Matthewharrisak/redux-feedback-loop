@@ -13,7 +13,7 @@ class Comments extends Component {
       <div className="Comments">
       
         <h1>Any comments you want to leave?</h1>
-        <input type="text" value="feedback"></input>
+        <input type="text" placeholder="Insert text here"></input>
         <button onClick={this.nextPage}> Next Page </button>
         <br/>
       </div>

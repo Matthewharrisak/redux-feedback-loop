@@ -14,7 +14,7 @@ class Understanding extends Component {
       <div className="Understanding">
        
         <h1>How well are you understanding the content?</h1>
-        {/* <input type="integer" value="feedback"></input> */}
+        <input type="integer" ></input>
         <button  onClick={this.nextPage} > Next Page </button>
         <br/>
       </div>
