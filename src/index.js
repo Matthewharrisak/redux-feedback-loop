@@ -3,6 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
+import { createStore, combineReducers } from'redux';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const getFeedbackObject = (state = [], action) => {
+    switch (action.type) {
+        case 'FEEDBACK_OBJECT':
+         return [state, action.payload];
+        default: return state;
+            
+    }
+}
+
+
+const storeInstance = createStore(
+    combineReducers({
+        getFeedbackObject,
+        
+    }),
+);
+
+ReactDOM.render(<Provider store={storeInstance}> <App /> </Provider>, document.getElementById('root'));
 registerServiceWorker();

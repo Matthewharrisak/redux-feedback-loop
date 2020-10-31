@@ -13,10 +13,10 @@ import axios from 'axios';
 class App extends Component {
 
   componentDidMount = () => {
-    this.getFeedbackData();
+    this.FeedbackData();
   }
 
-  getFeedbackData = () => {
+  FeedbackData = () => {
     axios.get('/feedback').then((response) => {
       console.log('this is from our database!!!!' , response.data);
       
