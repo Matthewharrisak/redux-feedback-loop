@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import {HashRouter as Router, Route} from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import FeelingToday from '../FeelingToday/FeelingToday';
 import HomePage from '../HomePage/HomePage';
 import Understanding from '../UnderStanding/UnderStanding';
@@ -19,7 +21,9 @@ class App extends Component {
   FeedbackData = () => {
     axios.get('/feedback').then((response) => {
       console.log('this is from our database!!!!' , response.data);
-      
+      this.props.dispatch({type: 'FEEDBACK_OBJECT' , payload: response.data})
+    }).catch((error) => {
+      console.log('error', error);
     });
   }
 
@@ -53,4 +57,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect()(App);

@@ -10,6 +10,8 @@ import { Provider } from 'react-redux';
 const getFeedbackObject = (state = [], action) => {
     switch (action.type) {
         case 'FEEDBACK_OBJECT':
+            console.log('whats up from the reducer', action.payload );
+            
          return [state, action.payload];
         default: return state;
             
