@@ -10,6 +10,7 @@ import Supported from '../Supported/Supported';
 import Comments from '../Comments/Comments';
 import ReviewFeedback from '../ReviewFeedback/ReviewFeedback';
 import axios from 'axios';
+import SubmissionFin from '../SubmissionFin/SubmissionFin';
 
 
 class App extends Component {
@@ -34,7 +35,6 @@ class App extends Component {
         <header className="App-header">
           <h1 className="App-title">Feedback!</h1>
           <h4><i>Don't forget it!</i></h4>
-          {JSON.stringify(this.props.reduxState)}
         </header>
         <br/>
         {/* <FeelingToday/> 
@@ -48,7 +48,7 @@ class App extends Component {
       <Route exact path="/Supported" component={Supported}/>
       <Route exact path="/Comments" component={Comments}/>
       <Route exact path="/ReviewFeedback" component={ReviewFeedback}/>
-
+      <Route exact path="/SubmissionFin" component={SubmissionFin}/>
 
 
       </Router>

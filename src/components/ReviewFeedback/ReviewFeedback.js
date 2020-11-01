@@ -6,6 +6,11 @@ import { connect } from 'react-redux';
 
 class ReviewFeedback extends Component {
 
+  nextPage = () => {
+    this.props.history.push('/SubmissionFin');
+    // this.addFeeling();
+  }
+
   postFeedback = () => {
     // event.preventDefault();
     console.log('adding feedback!!', this.props.reduxState.getFeedbackObject);
@@ -14,6 +19,7 @@ class ReviewFeedback extends Component {
       }).catch((error) => {
       console.log(error);
      })
+     this.nextPage();
     }
 
   render() {
@@ -23,7 +29,7 @@ class ReviewFeedback extends Component {
         <h1>Review Your Feedback</h1>
         <h3> Feeling: {this.props.reduxState.getFeedbackObject.feeling} </h3>
         <h3>  Understanding:{this.props.reduxState.getFeedbackObject.understanding} </h3>
-        <h3> Support:{this.props.reduxState.getFeedbackObject.supported} </h3>
+        <h3> Support:{this.props.reduxState.getFeedbackObject.support} </h3>
         <h3> Comments: {this.props.reduxState.getFeedbackObject. comments}</h3>
          <button onClick={this.postFeedback}> Submit  </button>
         <br/>
