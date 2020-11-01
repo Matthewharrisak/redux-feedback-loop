@@ -11,6 +11,7 @@ class FeelingToday extends Component {
     nextPage = () => {
         this.props.history.push('/UnderStanding');
         // this.addFeeling();
+        this.addFeeling();
       }
 
       handleChange = (event) => {
@@ -24,19 +25,19 @@ class FeelingToday extends Component {
         this.props.dispatch({
           type:'FEELING_OBJECT', payload: this.state.feeling})      
           console.log('from addFeeling' , this.state);
-          this.nextPage();
+          // this.nextPage();
            }
 
   render() {
     return (
-      <div className="Feeling">
-        
+<>
+        <form onSubmit={this.nextPage}>
         <h1>How are you feeling today?</h1>
-        <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5"></input>
-        <button onClick={this.addFeeling}> Next Page </button>
-
+        <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5" required="required"></input>
+        <button> Next Page </button>
+        </form>
         <br/>
-      </div>
+     </>
     );
   }
 }
