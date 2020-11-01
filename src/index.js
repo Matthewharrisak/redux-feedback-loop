@@ -27,7 +27,7 @@ const getFeedbackObject = (state = {}, action) => {
     else if(action.type === 'SUPPORTED_OBJECT'){
         return {
             ...state,
-            supported: action.payload
+            support: action.payload
             }  
         }
         else if(action.type === 'COMMENTS_OBJECT'){

@@ -23,7 +23,7 @@ pool.query(queryText, [feedback.feeling, feedback.understanding,
                      .then(result => {
                          res.sendStatus(201);
                      }).catch(error => {
-                         console.log('error in postRequest' , error);
+                         console.log('error in server postRequest' , error);
                          res.sendStatus(500);
                      });
 });

@@ -1,9 +1,21 @@
+import axios from 'axios';
 import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux';
 
 
 class ReviewFeedback extends Component {
+
+  postFeedback = () => {
+    // event.preventDefault();
+    console.log('adding feedback!!', this.props.reduxState.getFeedbackObject);
+    axios.post('/feedback', this.props.reduxState.getFeedbackObject).then((response) => {
+      console.log(response.data);
+      }).catch((error) => {
+      console.log(error);
+     })
+    }
+
   render() {
     return (
       <div className="Supported">
@@ -13,7 +25,7 @@ class ReviewFeedback extends Component {
         <h3>  Understanding:{this.props.reduxState.getFeedbackObject.understanding} </h3>
         <h3> Support:{this.props.reduxState.getFeedbackObject.supported} </h3>
         <h3> Comments: {this.props.reduxState.getFeedbackObject. comments}</h3>
-         <button> Submit  </button>
+         <button onClick={this.postFeedback}> Submit  </button>
         <br/>
       </div>
     );
