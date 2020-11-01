@@ -4,7 +4,9 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
-  
+  state = {
+    comments: ''
+  }
 
     nextPage = () => {
         console.log('are we clicking?');
@@ -27,7 +29,7 @@ class Comments extends Component {
   render() {
     return (
       <div className="Comments">
-      <form onSubmit={this.addComments}>
+        <form onSubmit={this.addComments}>
         <h1>Any comments you want to leave?</h1>
         <input onChange={this.handleChange} type="text" placeholder="Insert text here"></input>
         <button> Next Page </button>
