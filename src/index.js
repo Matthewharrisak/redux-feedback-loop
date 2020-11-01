@@ -27,8 +27,7 @@ const getFeedbackObject = (state = {}, action) => {
 const storeInstance = createStore(
      combineReducers({
         getFeedbackObject,
-
-    }),
+        }),
     applyMiddleware(logger)
 
 );
