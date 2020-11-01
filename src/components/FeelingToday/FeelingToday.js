@@ -15,7 +15,7 @@ class FeelingToday extends Component {
 
       handleChange = (event) => {
         this.setState({
-          feeling: [event.target.value]
+          feeling: event.target.value
         });
       }
 
