@@ -22,7 +22,7 @@ class FeelingToday extends Component {
       addFeeling = () => {
         // console.log('this is where were adding FEELING to the object wow!!' , this.handleChange);
         this.props.dispatch({
-          type:'FEEDBACK_OBJECT', payload: this.state.feeling})      
+          type:'FEELING_OBJECT', payload: this.state.feeling})      
           console.log('from addFeeling' , this.state);
           this.nextPage();
            }

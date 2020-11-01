@@ -5,27 +5,27 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
-  state = {
-    understanding: ''
-  };
+  // state = {
+  //   understanding: ''
+  // };
 
   handleChange = (event) => {
     this.setState({
-      understanding: [event.target.value]
+      understanding: event.target.value
     });
   }
 
     nextPage = () => {
         console.log('are we clicking?');
         this.props.history.push('/Supported');
-        this.addUnderstanding();
       }
 
       addUnderstanding = () => {
-        console.log('this is where were adding UNDERSTANDING to the object wow!!' , this.handleChange);
+        // console.log('this is where were adding UNDERSTANDING to the object wow!!' , this.handleChange);
         this.props.dispatch({
-          type:'FEEDBACK_OBJECT', payload: this.state.understanding})      
+          type:'UNDERSTANDING_OBJECT', payload: this.state.understanding})      
           console.log('from addUNDERSTANDING' , this.state);
+          this.nextPage();
            }
 
   render() {
@@ -34,7 +34,7 @@ class Understanding extends Component {
        
         <h1>How well are you understanding the content?</h1>
         <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5"></input>
-        <button  onClick={this.nextPage} > Next Page </button>
+        <button  onClick={this.addUnderstanding} > Next Page </button>
         <br/>
       </div>
     );

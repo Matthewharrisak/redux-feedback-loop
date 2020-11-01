@@ -12,18 +12,32 @@ import logger from 'redux-logger';
 
 
 const getFeedbackObject = (state = {}, action) => {
-    switch (action.type) {
-        
-        case 'FEEDBACK_OBJECT':
-            console.log('whats up from the reducer', action.payload );
-            
-         return {...state, 
-            feeling: action.payload};
-        default: return state;
-            
+    if(action.type === 'FEELING_OBJECT'){
+        return {
+            ...state,
+            feeling: action.payload
+         }
+   }
+   else if(action.type === 'UNDERSTANDING_OBJECT'){
+    return {
+        ...state,
+        understanding: action.payload
+        }  
     }
+    else if(action.type === 'SUPPORTED_OBJECT'){
+        return {
+            ...state,
+            supported: action.payload
+            }  
+        }
+        else if(action.type === 'COMMENTS_OBJECT'){
+            return {
+                ...state,
+                comments: action.payload
+                }  
+            }
+            return state;
 }
-
 
 
 
