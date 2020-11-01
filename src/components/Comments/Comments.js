@@ -4,25 +4,23 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
-  state = {
-    comments: '',
-  }
+  
 
     nextPage = () => {
         console.log('are we clicking?');
         this.props.history.push('/ReviewFeedback');
-        this.addComments();
       }
 
       addComments = () => {
-        console.log('this is where were adding COMMENTS to the object wow!!' , this.handleChange);
         this.props.dispatch({
-          type:'FEEDBACK_OBJECT', payload: this.state.comments})      
+          type:'COMMENTS_OBJECT', payload: this.state.comments})      
           console.log('from addUNDERSTANDING' , this.state);
+          this.nextPage();
            }
+
            handleChange = (event) => {
             this.setState({
-              comments: [event.target.value]
+              comments: event.target.value
             });
           }
 
@@ -32,7 +30,7 @@ class Comments extends Component {
       
         <h1>Any comments you want to leave?</h1>
         <input onChange={this.handleChange} type="text" placeholder="Insert text here"></input>
-        <button onClick={this.nextPage}> Next Page </button>
+        <button onClick={this.addComments}> Next Page </button>
         <br/>
       </div>
     );
