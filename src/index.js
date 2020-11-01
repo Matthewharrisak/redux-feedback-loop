@@ -17,7 +17,8 @@ const getFeedbackObject = (state = {}, action) => {
         case 'FEEDBACK_OBJECT':
             console.log('whats up from the reducer', action.payload );
             
-         return [state, ...action.payload];
+         return {...state, 
+            feeling: action.payload};
         default: return state;
             
     }
