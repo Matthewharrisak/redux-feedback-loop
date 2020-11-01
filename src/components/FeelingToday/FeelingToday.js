@@ -33,6 +33,8 @@ class FeelingToday extends Component {
         <h1>How are you feeling today?</h1>
         <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5"></input>
         <button onClick={this.nextPage}> Next Page </button>
+        {JSON.stringify(this.props.reduxState)}
+
         <br/>
       </div>
     );

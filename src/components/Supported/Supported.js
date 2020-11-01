@@ -16,7 +16,7 @@ class Supported extends Component {
 
       handleChange = (event) => {
         this.setState({
-          understanding: [event.target.value]
+          supported: [event.target.value]
         });
       }
 
