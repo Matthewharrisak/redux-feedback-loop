@@ -27,8 +27,8 @@ class Supported extends Component {
 
   render() {
     return (
-      <div className="Supported">
-          <form onSubmit={this.addSupported}>
+<div className="masterDiv">
+            <form onSubmit={this.addSupported}>
           <h1>How well are you being supported?</h1>
         <input onChange={this.handleChange} type="integer" placeholder="Please Answer with 1-5" required="required"></input>
         <button> Next Page </button>

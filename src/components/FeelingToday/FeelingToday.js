@@ -30,14 +30,14 @@ class FeelingToday extends Component {
 
   render() {
     return (
-<>
+<div className="masterDiv">
         <form onSubmit={this.nextPage}>
         <h1>How are you feeling today?</h1>
         <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5" required="required"></input>
         <button> Next Page </button>
         </form>
         <br/>
-     </>
+     </div>
     );
   }
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 // import axios from 'axios';
 import { connect } from 'react-redux';
 
+
 class Comments extends Component {
 
   state = {
@@ -28,7 +29,7 @@ class Comments extends Component {
 
   render() {
     return (
-      <div className="Comments">
+      <div className="masterDiv">
         <form onSubmit={this.addComments}>
         <h1>Any comments you want to leave?</h1>
         <input onChange={this.handleChange} type="text" placeholder="Insert text here"></input>

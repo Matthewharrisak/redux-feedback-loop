@@ -24,8 +24,8 @@ class ReviewFeedback extends Component {
 
   render() {
     return (
-      <div className="Supported">
-       
+<div className="masterDiv">
+         
         <h1>Review Your Feedback</h1>
         <h3> Feeling: {this.props.reduxState.getFeedbackObject.feeling} </h3>
         <h3>  Understanding:{this.props.reduxState.getFeedbackObject.understanding} </h3>

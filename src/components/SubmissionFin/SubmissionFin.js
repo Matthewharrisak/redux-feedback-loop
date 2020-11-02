@@ -12,8 +12,7 @@ class SubmissionFin extends Component {
 
   render() {
     return (
-      <div className="Feeling">
-     
+      <div className="masterDiv">     
     
         
         <h1> Submission sucessful! Thank you!  </h1>

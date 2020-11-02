@@ -30,16 +30,16 @@ class Understanding extends Component {
 
   render() {
     return (
-      <>
-      <div className="Understanding">
-       <form onSubmit={this.addUnderstanding}>
+      
+<div className="masterDiv">     
+  <form onSubmit={this.addUnderstanding}>
         <h1>How well are you understanding the content?</h1>
         <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5" required="required"></input>
         <button> Next Page </button>
         <br/>
         </form>
       </div>
-      </>
+      
     );
   }
 }

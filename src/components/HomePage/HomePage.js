@@ -12,10 +12,10 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="Feeling">
+      
      
     
-        
+     <div className="masterDiv">
         <h1> How did today go? </h1>
 
         <button onClick={this.nextPage}> Submit feedback </button>
