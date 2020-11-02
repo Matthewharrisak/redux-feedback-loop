@@ -11,6 +11,10 @@ class Supported extends Component {
         this.props.history.push('/Comments');
       }
 
+      backPage = () => {
+        this.props.history.push('/UnderStanding');
+      }
+
       handleChange = (event) => {
         this.setState({
           supported: event.target.value
@@ -27,6 +31,7 @@ class Supported extends Component {
 
   render() {
     return (
+      <>
 <div className="masterDiv">
             <form onSubmit={this.addSupported}>
           <h1>How well are you being supported?</h1>
@@ -34,7 +39,11 @@ class Supported extends Component {
         <button> Next Page </button>
         <br/>
         </form>
+
       </div>
+      <button onClick={this.backPage}> Go back? </button>
+
+      </>
     );
   }
 }

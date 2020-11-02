@@ -5,9 +5,7 @@ import { connect } from 'react-redux';
 
 class Understanding extends Component {
 
-  // state = {
-  //   understanding: ''
-  // };
+
 
   handleChange = (event) => {
     this.setState({
@@ -20,6 +18,10 @@ class Understanding extends Component {
         this.props.history.push('/Supported');
       }
 
+      backPage = () => {
+        this.props.history.push('/FeelingToday');
+      }
+
       addUnderstanding = () => {
         // console.log('this is where were adding UNDERSTANDING to the object wow!!' , this.handleChange);
         this.props.dispatch({
@@ -30,7 +32,7 @@ class Understanding extends Component {
 
   render() {
     return (
-      
+      <>
 <div className="masterDiv">     
   <form onSubmit={this.addUnderstanding}>
         <h1>How well are you understanding the content?</h1>
@@ -39,7 +41,9 @@ class Understanding extends Component {
         <br/>
         </form>
       </div>
-      
+      <button onClick={this.backPage}> Go back? </button>
+
+      </>
     );
   }
 }

@@ -8,9 +8,11 @@ class ReviewFeedback extends Component {
 
   nextPage = () => {
     this.props.history.push('/SubmissionFin');
-    // this.addFeeling();
   }
 
+  backPage = () => {
+    this.props.history.push('/Comments');
+  }
   postFeedback = () => {
     // event.preventDefault();
     console.log('adding feedback!!', this.props.reduxState.getFeedbackObject);
@@ -24,8 +26,9 @@ class ReviewFeedback extends Component {
 
   render() {
     return (
+      <>
 <div className="masterDiv">
-         
+
         <h1>Review Your Feedback</h1>
         <h3> Feeling: {this.props.reduxState.getFeedbackObject.feeling} </h3>
         <h3>  Understanding:{this.props.reduxState.getFeedbackObject.understanding} </h3>
@@ -34,6 +37,9 @@ class ReviewFeedback extends Component {
          <button onClick={this.postFeedback}> Submit  </button>
         <br/>
       </div>
+      <button onClick={this.backPage}> Need to change your answer? </button>
+
+      </>
     );
   }
 }

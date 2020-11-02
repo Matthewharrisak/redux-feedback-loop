@@ -9,6 +9,9 @@ class Comments extends Component {
     comments: ''
   }
 
+  backPage = () => {
+    this.props.history.push('/Supported');
+  }
     nextPage = () => {
         console.log('are we clicking?');
         this.props.history.push('/ReviewFeedback');
@@ -29,6 +32,7 @@ class Comments extends Component {
 
   render() {
     return (
+      <>
       <div className="masterDiv">
         <form onSubmit={this.addComments}>
         <h1>Any comments you want to leave?</h1>
@@ -37,6 +41,9 @@ class Comments extends Component {
         <br/>
         </form>
       </div>
+      <button onClick={this.backPage}> Go back? </button>
+
+      </>
     );
   }
 }

@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 
 class FeelingToday extends Component {
 
-//  state = {
-//    feeling: '',
-//  }// current input - handle the input and update reducer 
 
     nextPage = () => {
         this.props.history.push('/UnderStanding');
         // this.addFeeling();
         this.addFeeling();
+      }
+
+      backPage = () => {
+        this.props.history.push('/');
       }
 
       handleChange = (event) => {
@@ -30,6 +31,8 @@ class FeelingToday extends Component {
 
   render() {
     return (
+      <>
+
 <div className="masterDiv">
         <form onSubmit={this.nextPage}>
         <h1>How are you feeling today?</h1>
@@ -38,6 +41,8 @@ class FeelingToday extends Component {
         </form>
         <br/>
      </div>
+     <button onClick={this.backPage}> Go back? </button>
+     </>
     );
   }
 }

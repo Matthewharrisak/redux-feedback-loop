@@ -21,4 +21,16 @@
 .masterDiv {
  
 text-align: center;
-margin-top: 100px;}
+margin-top: 100px;
+}
+
+button {
+  background-color: gold;
+	background-color:#faba3a;
+	border:px solid #d02718;
+	cursor:pointer;
+	font-family:Arial;
+	font: size 15px;
+	font-weight:bold;
+	text-decoration: 
+}

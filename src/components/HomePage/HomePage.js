@@ -14,13 +14,15 @@ class HomePage extends Component {
     return (
       
      
-    
+    <>
      <div className="masterDiv">
         <h1> How did today go? </h1>
 
         <button onClick={this.nextPage}> Submit feedback </button>
         <br/>
       </div>
+
+      </>
     );
   }
 }
