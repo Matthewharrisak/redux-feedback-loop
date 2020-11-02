@@ -5,30 +5,34 @@ import { connect } from 'react-redux';
 
 class Comments extends Component {
 
-  state = {
-    comments: ''
-  }
 
-  backPage = () => {
-    this.props.history.push('/Supported');
-  }
+  // State is set to an empty string so if there is no input value, the empty string is sent as the value
+    state = {
+     comments: ''
+   }
+  //  function to go back 1 page 
+    backPage = () => {
+      this.props.history.push('/Supported');
+    }
+    // function to move to the next page
     nextPage = () => {
         console.log('are we clicking?');
         this.props.history.push('/ReviewFeedback');
       }
 
+      // adds value from input and dispatchs that data to the Reducer
       addComments = () => {
         this.props.dispatch({
-          type:'COMMENTS_OBJECT', payload: this.state.comments})      
-          console.log('from addUNDERSTANDING' , this.state);
-          this.nextPage();
-           }
-
-           handleChange = (event) => {
+            type:'COMMENTS_OBJECT', payload: this.state.comments})      
+            console.log('from addUNDERSTANDING' , this.state);
+         this.nextPage();
+      }
+      
+      handleChange = (event) => {
             this.setState({
-              comments: event.target.value
+            comments: event.target.value
             });
-          }
+      }
 
   render() {
     return (

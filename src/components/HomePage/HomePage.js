@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-// import axios from 'axios';
 
 class HomePage extends Component {
 
+  // moves to the next page, where the from starts
     nextPage = () => {
-        console.log('are we clicking?');
         this.props.history.push('/FeelingToday');
       }
 

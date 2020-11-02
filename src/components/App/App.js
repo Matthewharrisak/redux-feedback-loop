@@ -15,18 +15,9 @@ import SubmissionFin from '../SubmissionFin/SubmissionFin';
 
 class App extends Component {
 
-  componentDidMount = () => {
-    this.FeedbackData();
-  }
+ 
 
-  FeedbackData = () => {
-    axios.get('/feedback').then((response) => {
-      console.log('this is from our database!!!!' , response.data);
-      this.props.dispatch({type: 'FEEDBACK_OBJECT' , payload: response.data})
-    }).catch((error) => {
-      console.log('error', error);
-    });
-  }
+ 
 
   render() {
     return (
@@ -37,10 +28,7 @@ class App extends Component {
           <h4><i>Don't forget it!</i></h4>
         </header>
         <br/>
-        {/* <FeelingToday/> 
-        <UnderStanding/>
-        <Comments/>
-        <ReviewFeedback/> */}
+      
       </div>
       <Route exact path="/" component={HomePage}/>
       <Route exact path="/FeelingToday" component={FeelingToday}/>

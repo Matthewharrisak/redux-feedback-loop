@@ -10,19 +10,19 @@ import logger from 'redux-logger';
 
 
 
-
+// Reducer that collects values from components and 
 const getFeedbackObject = (state = {}, action) => {
     if(action.type === 'FEELING_OBJECT'){
         return {
             ...state,
             feeling: action.payload
          }
-   }
-   else if(action.type === 'UNDERSTANDING_OBJECT'){
-    return {
-        ...state,
-        understanding: action.payload
-        }  
+    }
+         else if(action.type === 'UNDERSTANDING_OBJECT'){
+         return {
+            ...state,
+             understanding: action.payload
+         }  
     }
     else if(action.type === 'SUPPORTED_OBJECT'){
         return {
@@ -40,7 +40,7 @@ const getFeedbackObject = (state = {}, action) => {
 }
 
 
-
+// Redux store
 const storeInstance = createStore(
      combineReducers({
         getFeedbackObject,

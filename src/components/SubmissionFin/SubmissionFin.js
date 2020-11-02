@@ -3,22 +3,20 @@ import React, { Component } from 'react';
 
 class SubmissionFin extends Component {
 
+
     nextPage = () => {
         console.log('are we clicking?');
         this.props.history.push('/');
-      }
+    }
 
       
 
   render() {
     return (
       <div className="masterDiv">     
-    
-        
-        <h1> Submission sucessful! Thank you!  </h1>
-
-        <button onClick={this.nextPage}> return home </button>
-        <br/>
+       <h1> Submission sucessful! Thank you!  </h1>
+       <button onClick={this.nextPage}> return home </button>
+      <br/>
       </div>
     );
   }

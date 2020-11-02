@@ -3,6 +3,7 @@ const router = express.Router();
 const pool = require('../modules/pool');
 
 
+// GET request for future admin page 
 router.get('/' , (req, res) => {
     console.log('get /feedback');
     pool.query('SELECT * from "feedback";').then((result) =>{
@@ -13,6 +14,7 @@ router.get('/' , (req, res) => {
     });
 })
 
+// POST reqeust that sends reduxState to the Database
 router.post('/' , (req, res) => {
 let feedback = req.body;
 console.log('posting feedback!!' , feedback);
