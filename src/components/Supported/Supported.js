@@ -23,7 +23,7 @@ class Supported extends Component {
       addSupported = () => {
         this.props.dispatch({
           type:'SUPPORTED_OBJECT', payload: this.state.supported})      
-          console.log('from addUNDERSTANDING' , this.state);
+          console.log('from addSUPPOERTED' , this.state);
           this.nextPage();
            }
 

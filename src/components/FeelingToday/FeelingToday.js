@@ -4,29 +4,36 @@ import { connect } from 'react-redux';
 
 class FeelingToday extends Component {
 
-
-    nextPage = () => {
-        this.props.history.push('/UnderStanding');
-        // this.addFeeling();
-        this.addFeeling();
-      }
+  
+    state = {
+      feeling: 0,
+    }
 
       backPage = () => {
         this.props.history.push('/');
       }
 
       handleChange = (event) => {
+        let btnSubmit = document.getElementById("btnSubmit");
+        if (event.target.value > '0' && event.target.value < '6' )
+        {btnSubmit.disabled = false} 
+        else {btnSubmit.disabled = true}
         this.setState({
           feeling: event.target.value
-        });
-      }
+        })
+     };
+       
+        nextPage = () => {
+ 
+            this.props.history.push('/UnderStanding');
+            this.addFeeling();
+            
+          }
 
       addFeeling = () => {
-        // console.log('this is where were adding FEELING to the object wow!!' , this.handleChange);
-        this.props.dispatch({
+         this.props.dispatch({
           type:'FEELING_OBJECT', payload: this.state.feeling})      
           console.log('from addFeeling' , this.state);
-          // this.nextPage();
            }
 
   render() {
@@ -36,8 +43,8 @@ class FeelingToday extends Component {
 <div className="masterDiv">
         <form onSubmit={this.nextPage}>
         <h1>How are you feeling today?</h1>
-        <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5" required="required" ></input>
-        <button> Next Page </button>
+        <input onChange={this.handleChange} onkeyup="EnableDisable(this)" placeholder="Answer 1 through 5" required="required" ></input>
+        <button id="btnSubmit" disabled="disabled"> Next Page </button>
         </form>
         <br/>
      </div>
