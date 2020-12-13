@@ -15,10 +15,15 @@ class Supported extends Component {
       }
 
       handleChange = (event) => {
-          this.setState({
+        let btnSubmit = document.getElementById("btnSubmit");
+        if (event.target.value > '0' && event.target.value < '6' )
+        {btnSubmit.disabled = false} 
+        else {btnSubmit.disabled = true}
+        this.setState({
           supported: event.target.value
-        });
-      }
+        })
+     };
+
       // dispatchs value to redux store
       addSupported = () => {
         this.props.dispatch({
@@ -33,8 +38,8 @@ class Supported extends Component {
           <div className="masterDiv">
               <form onSubmit={this.addSupported}>
                   <h1>How well are you being supported?</h1>
-                  <input onChange={this.handleChange} type="integer" placeholder="Please Answer with 1-5" required="required"></input>
-                   <button> Next Page </button>
+                  <input onChange={this.handleChange} onkeyup="EnableDisable(this)" placeholder="Answer 1 through 5" required="required" ></input>
+                  <button id="btnSubmit" disabled="disabled"> Next Page </button>
                   <br/>
               </form>
           </div>

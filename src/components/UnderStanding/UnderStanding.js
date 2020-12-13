@@ -7,11 +7,15 @@ class Understanding extends Component {
 
 
 
-    handleChange = (event) => {
-      this.setState({
+  handleChange = (event) => {
+    let btnSubmit = document.getElementById("btnSubmit");
+    if (event.target.value > '0' && event.target.value < '6' )
+    {btnSubmit.disabled = false} 
+    else {btnSubmit.disabled = true}
+    this.setState({
       understanding: event.target.value
-     });
-    }
+    })
+ };
 
     nextPage = () => {
         this.props.history.push('/Supported');
@@ -35,8 +39,8 @@ class Understanding extends Component {
         <div className="masterDiv">     
           <form onSubmit={this.addUnderstanding}>
              <h1>How well are you understanding the content?</h1>
-             <input onChange={this.handleChange} type="number" placeholder="Answer 1 through 5" required="required"></input>
-            <button> Next Page </button>
+             <input onChange={this.handleChange} onkeyup="EnableDisable(this)" placeholder="Answer 1 through 5" required="required" ></input>
+             <button id="btnSubmit" disabled="disabled"> Next Page </button>
              <br/>
           </form>
        </div>
